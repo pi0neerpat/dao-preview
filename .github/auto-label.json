@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "web": ["web/**/*"],
+    "api": ["api/**/*"],
+    "packages": ["packages/**/*"],
+    "dependency change": [
+      "package.json",
+      "web/package.json",
+      "api/package.json"
+    ]
+  }
+}

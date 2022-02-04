@@ -1,0 +1,20 @@
+h1 {
+  @include font(32px, bold, 39px);
+}
+
+h2 {
+  @include font(24px, bold, 29px);
+}
+
+h3 {
+  @include font(16px, normal, 20px);
+}
+h4 {
+  @include font(14px, normal, 20px);
+}
+p {
+  @include font(12px, normal, 16px);
+}
+li {
+  margin-top: 12px;
+}

@@ -1,0 +1,21 @@
+.faq-container {
+  .faq-header {
+    line-height: 56px;
+  }
+
+  .question-wrapper {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #272522;
+    border-radius: 12px;
+  }
+
+  .section-expand-button {
+    outline: none;
+  }
+
+  .answer-container {
+    transition: opacity 250ms ease, max-height 250ms ease;
+    line-height: 30px;
+  }
+}

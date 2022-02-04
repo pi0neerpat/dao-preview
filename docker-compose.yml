@@ -1,0 +1,29 @@
+version: '3'
+services:
+  api:
+    image: pi0neerpat/dao-preview-api
+    # restart: always
+    ports:
+      - '8911:8911' # http
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '200k'
+        max-file: '10'
+    env_file:
+      - .env
+
+  web:
+    image: pi0neerpat/dao-preview-api
+    # restart: always
+    ports:
+      - '8910:8910' # http
+    depends_on:
+      - api
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '200k'
+        max-file: '10'
+    env_file:
+      - .env

@@ -1,0 +1,33 @@
+# This file contains the configuration settings for your Redwood app.
+# This file is also what makes your Redwood app a Redwood app.
+# If you remove it and try to run `yarn rw dev`, you'll get an error.
+#
+# For the full list of options, see the "App Configuration: redwood.toml" doc:
+# https://redwoodjs.com/docs/app-configuration-redwood-toml
+
+[web]
+  port = 8910
+  host = "0.0.0.0"
+  title = "Dao Preview"
+  # apiProxyPort = 8911
+  apiUrl = "${REDWOOD_API_URL:/api}"
+  includeEnvironmentVariables = [
+    "APP_DOMAIN",
+    "REDWOOD_API_URL",
+    "NODE_ENV",
+  ]
+[api]
+  port = 8911
+  schemaPath = "./api/db/schema.prisma"
+  includeEnvironmentVariables = [
+    "APP_DOMAIN",
+    "NODE_ENV"
+  ]
+[browser]
+  open = true
+[experimental]
+  esbuild = false
+  useEnvelop = true # https://community.redwoodjs.com/t/using-graphql-envelop-helix-in-redwood-v0-35/2276
+[dev]
+# Allows running normal yarn rw dev
+  command = "yarn rw dev"

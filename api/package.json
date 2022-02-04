@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@envelop/rate-limiter": "^1.0.0",
+    "@envelop/sentry": "^1.1.0",
+    "@redwoodjs/api": "^0.40.0",
+    "@redwoodjs/graphql-server": "^0.40.0",
+    "@sentry/node": "^6.17.3",
+    "@sentry/tracing": "^6.17.3",
+    "core-js": "^3.19.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@redwoodjs/cli": "^0.40.0",
+    "dotenv": "^10.0.0",
+    "prisma": "^3.6.0"
+  }
+}

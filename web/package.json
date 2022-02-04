@@ -1,0 +1,44 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "private": true,
+  "browserslist": {
+    "development": [
+      "last 1 version"
+    ],
+    "production": [
+      "defaults",
+      "not IE 11",
+      "not IE_Mob 11"
+    ]
+  },
+  "scripts": {
+    "generate-icons": "node src/scripts/generate-icon-system"
+  },
+  "dependencies": {
+    "@redwoodjs/auth": "^0.40.0",
+    "@redwoodjs/forms": "^0.40.0",
+    "@redwoodjs/router": "^0.40.0",
+    "@redwoodjs/web": "^0.40.0",
+    "@sentry/browser": "^6.17.3",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-feather": "^2.0.9",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-loading-skeleton": "^3.0.1",
+    "react-scroll-to-top": "^1.0.8",
+    "react-spring": "^9.2.4"
+  },
+  "devDependencies": {
+    "@redwoodjs/core": "^0.40.0",
+    "@storybook/addon-essentials": "^6.3.12",
+    "autoprefixer": "^9.0.0",
+    "node-sass-glob-importer": "^5.3.2",
+    "postcss": "^8.4.5",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.35.1",
+    "sass-loader": "^10",
+    "tailwindcss": "3.0.2"
+  }
+}

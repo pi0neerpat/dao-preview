@@ -1,0 +1,40 @@
+.header {
+  @apply shadow-lg max-w-7xl;
+
+  background-color: theme('colors.appBlack.200');
+  padding: 2ex;
+  font-size: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+
+  &__iconSearch {
+    display: flex;
+    align-items: center;
+  }
+  &__nav {
+    width: clamp(260px, 33vw, 400px);
+    align-items: center;
+    flex: 1;
+    margin-right: 0.75em;
+    user-select: none;
+    &__username,
+    &__login {
+      font-weight: bold;
+      padding: 0 !important;
+    }
+    &__address {
+      font-weight: light;
+      color: theme('colors.grey');
+    }
+    &__balance {
+      font-weight: bold;
+      color: theme('colors.grey');
+    }
+    &__fund-wallet {
+      padding: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './styles/index';
+
+@import './components/**/_styles.scss';
+@import './pages/**/_styles.scss';
+@import './layouts/**/_styles.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import 'react-loading-skeleton/dist/skeleton.css';
+
+$background-color: '#312e2b';
+
+body {
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #3d3b38;
+    border-radius: 20px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 24px;
+    border: none;
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  line-height: 1.2;
+  color: white;
+  background-color: #47433f;
+}
+
+a {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.max-width-container {
+  max-width: 1600px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appreance: none;
+  margin: 0;
+}
+
+input {
+  -moz-appearance: textfield;
+}

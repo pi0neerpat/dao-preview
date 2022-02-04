@@ -1,0 +1,18 @@
+.skeleton-card {
+  position: relative;
+  width: 266px;
+  height: 476px;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.skeleton-rows {
+  position: relative;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-container {
+  display: flex;
+  flex-wrap: wrap;
+}

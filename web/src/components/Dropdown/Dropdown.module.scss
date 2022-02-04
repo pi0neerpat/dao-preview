@@ -1,0 +1,63 @@
+@use "sass:color";
+
+.dropdownWrapper {
+  font-size: .925rem;
+  user-select: none;
+  width: 100%;
+}
+
+.dropdown {
+  background-color: #4F4F4F;
+  font-size: 1rem;
+  margin: 1ex 0;
+  border-radius: 4px;
+}
+
+.dropdownLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1ex 1em;
+  transition: all 0.25s;
+  border-radius: 4px;
+  > span {
+    padding-top: 0.5ex;
+  }
+  &:hover{
+    background-color: color.scale(#4F4F4F, $lightness: 20%);
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdownObject {
+  padding: 1ex 1em;
+  transition: all 0.25s;
+  &:hover, &:focus {
+    background-color: color.scale(#4F4F4F, $lightness: 20%);
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.optionContainerWrap {
+  position: relative;
+  height: 0px;
+}
+
+.optionContainer {
+  position: relative;
+  left: 0;
+  top: 0;
+  background-color: #4F4F4F;
+  width: 100%;
+  overflow: auto;
+  max-height: 180px;
+  z-index: 1;
+}

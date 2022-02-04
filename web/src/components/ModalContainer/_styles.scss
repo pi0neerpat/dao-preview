@@ -1,0 +1,112 @@
+@use 'sass:color';
+
+body {
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #3d3b38;
+    border-radius: 20px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 24px;
+    border: none;
+  }
+}
+
+body.modal-open {
+  height: 120vh;
+  overflow-y: hidden;
+}
+
+.overlay {
+  background: rgba(49, 46, 43, 0.5);
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 500;
+}
+
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 90%;
+  max-width: 432px;
+  max-height: 120vh;
+  background: #4f4f4f;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  z-index: 1000;
+}
+
+.modal-header-wrapper {
+  text-align: center;
+  margin-bottom: 12px;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  width: 100%;
+  bottom: 10px;
+}
+
+.body-text {
+  font-size: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  line-height: 20px;
+}
+
+.modal-button-wrapper {
+  text-align: center;
+  padding-bottom: 2px;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.modal-close-button {
+  padding-right: 10px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal-submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8px 8px 8px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  background: #125bf5;
+  border-radius: 4px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 24px;
+  box-shadow: 0px 2px 0px 0px #1a32af;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: color.scale(#125bf5, $lightness: -5%);
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+}

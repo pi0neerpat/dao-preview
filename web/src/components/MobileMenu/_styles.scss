@@ -1,0 +1,46 @@
+.mobile-menu {
+  @apply bg-appBlack-200;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 200ms linear;
+
+  &--title {
+    @apply text-4xl pl-8;
+  }
+
+  &[data-direction='ltr'] {
+    animation: appear-left 200ms linear;
+  }
+
+  &[data-direction='rtl'] {
+    animation: appear-right 200ms linear;
+  }
+}
+
+@keyframes appear-right {
+  from {
+    opacity: 0%;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes appear-left {
+  from {
+    opacity: 0%;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateX(0%);
+  }
+}

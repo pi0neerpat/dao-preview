@@ -1,0 +1,71 @@
+.button {
+  @apply font-bold py-1 px-2 rounded text-white;
+
+  display: block;
+  transition: all 0.25s;
+
+  &[data-selected='true'],
+  &:focus {
+    background-color: rgb(200 200 200 / 0.25);
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: rgb(200 200 200 / 0.25);
+    transform: translateY(-3px);
+    text-decoration: none;
+  }
+
+  &[data-fluid='true'] {
+    @apply w-full;
+  }
+
+  &:not([data-variant='transparent']) {
+    @apply shadow;
+  }
+
+  &[data-size='small'] {
+    @apply text-sm;
+  }
+
+  &[data-size='large'] {
+    @apply text-lg;
+  }
+
+  &[data-variant='grey'] {
+    @apply bg-greyDark;
+  }
+
+  &[data-variant='green'] {
+    @apply bg-greenDark;
+  }
+
+  &[data-variant='blue'] {
+    @apply bg-blueDark;
+  }
+
+  &[data-variant='orange'] {
+    @apply bg-orange;
+  }
+
+  &[data-variant='black'] {
+    @apply bg-appBlack-200;
+  }
+
+  &[data-textcolor='black'] {
+    @apply text-black;
+  }
+
+  &[data-textcolor='blue'] {
+    @apply text-blueLink;
+  }
+
+  &[data-textcolor='grey'] {
+    @apply text-grey;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 25%;
+}
