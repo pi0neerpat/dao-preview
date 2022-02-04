@@ -2,7 +2,7 @@ import Sentry from 'src/lib/sentry'
 
 export const handler = async (event) => {
   try {
-    const { options, dataOnly } = event.queryStringParameters
+    const { dataOnly } = event.queryStringParameters
 
     const base64 = 'TODO: GET BASE64 IMAGE DATA'
 
