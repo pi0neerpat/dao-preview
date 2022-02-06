@@ -28,7 +28,7 @@ export const handler = async (event) => {
     const buffer = await page.screenshot()
     await browser.close()
     return {
-      statusCode: 500, // Always return 200
+      statusCode: 200,
       headers: { 'Content-Type': 'image/jpeg' },
       body: buffer,
     }
