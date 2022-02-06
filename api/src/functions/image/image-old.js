@@ -1,4 +1,5 @@
 import Sentry from 'src/lib/sentry'
+import { chromium } from 'playwright-core'
 
 export const handler = async (event) => {
   try {
@@ -10,18 +11,22 @@ export const handler = async (event) => {
       ;({ width, height, address, chainId } = event.querytringParameters)
     }
 
-    var query = new URLSearchParams()
+    const browser = await chromium.launch()
+    // const context = await browser.newContext()
 
-    query.append(
-      'url',
-      `${process.env.APP_DOMAIN}/preview/${chainId}/${address}`
-    )
-    width && query.append('width', width)
-    height && query.append('height', height)
-
-    const buffer = await fetch(
-      'https://headless-screenshot.vercel.app/api/?' + query.toString()
-    )
+    const page = await browser.newPage({
+      viewport: {
+        width: width,
+        height: height,
+      },
+    })
+    const url = `${process.env.APP_DOMAIN}/preview/${chainId}/${address}`
+    // Generate the full URL out of the given path (GET parameter)
+    await page.goto(url, {
+      waitUntil: 'networkidle',
+    })
+    const buffer = await page.screenshot()
+    await browser.close()
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'image/jpeg' },
