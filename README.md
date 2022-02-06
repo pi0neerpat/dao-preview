@@ -93,6 +93,12 @@ docker run -it --rm \
   - Twitter: [@pi0neerpat](https://twitter.com/pi0neerpat)
   - GitHub: [@pi0neerpat](https://github.com/pi0neerpat)
 
+👤 **Kris Coulson**
+
+- Website: http://kriscoulson.com
+  - Twitter: [@enj4yy](https://twitter.com/enj4yy)
+  - GitHub: [@KrisCoulson](https://github.com/KrisCoulson)
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
