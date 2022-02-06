@@ -5,10 +5,8 @@ FROM node:14 as base
 WORKDIR /app
 
 ARG NODE_ENV
-ARG RUNTIME_ENV
 
 ENV NODE_ENV=$NODE_ENV
-ENV RUNTIME_ENV=$RUNTIME_ENV
 
 COPY packages .
 COPY package.json .
@@ -28,6 +26,7 @@ FROM base as build
 COPY api .
 COPY web .
 COPY packages .
+COPY package.json .
 
 RUN yarn build-packages && yarn rw build
 
@@ -40,7 +39,7 @@ WORKDIR /app
 COPY serve.sh .
 
 # web
-COPY --from=builder /app/web/dist /app/web/dist
+COPY --from=build /app/web/dist /app/web/dist
 # packages
 COPY --from=build /app/packages /app/packages
 # api
