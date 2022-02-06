@@ -1,24 +1,25 @@
 import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
 import Sentry from 'src/lib/sentry'
 
-import { db } from './db'
+// import { db } from './db'
 
 export const getCurrentUser = async (session) => {
-  const member = await db.member.findUnique({
-    where: { id: session.id },
-    // Warning: don't send any confidential data here
-    select: {
-      id: true,
-      username: true,
-      imageSrc: true,
-      country: true,
-    },
-  })
-  if (!member) return null
-  // WARNING: Returned values here are exposed to the FE
-  // Don't include any Chess.com access tokens here
-  Sentry.setUser(member)
-  return member
+  // const member = await db.member.findUnique({
+  //   where: { id: session.id },
+  //   // Warning: don't send any confidential data here
+  //   select: {
+  //     id: true,
+  //     username: true,
+  //     imageSrc: true,
+  //     country: true,
+  //   },
+  // })
+  // if (!member) return null
+  // // WARNING: Returned values here are exposed to the FE
+  // // Don't include any Chess.com access tokens here
+  // Sentry.setUser(member)
+  // return member
+  return null
 }
 
 export const isAuthenticated = () => {
