@@ -1,27 +1,29 @@
-# Redwood
+<h1 align="center">Welcome to dao-preview 👋</h1>
+<p>
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/pi0neerpat" target="_blank">
+    <img alt="Twitter: pi0neerpat" src="https://img.shields.io/twitter/follow/pi0neerpat.svg?style=social" />
+  </a>
+  <a href="https://twitter.com/pi0neerpat" target="_blank">
+    <img alt="Twitter: pi0neerpat" src="https://img.shields.io/twitter/follow/pi0neerpat.svg?style=social" />
+  </a>
+</p>
 
-> **NOTICE:** RedwoodJS is very close to a stable version 1.0. In the last two years,
-> the project has matured significantly and is already used in production by a number
-> of startups. We intend to have a 1.0 release candidate before the end of 2021 and
-> to release a truly production-ready 1.0 in early 2022.
+> An easy way for everyone to &#34;get the scoop&#34; on your DAO
 
-## Getting Started
+### 🏠 [Homepage](https://daopreview.com)
 
-- [Tutorial](https://redwoodjs.com/tutorial/welcome-to-redwood): getting started and complete overview guide.
-- [Docs](https://redwoodjs.com/docs/introduction): using the Redwood Router, handling assets and files, list of command-line tools, and more.
-- [Redwood Community](https://community.redwoodjs.com): get help, share tips and tricks, and collaborate on everything about RedwoodJS.
+## Install
 
-### Setup
-
-We use Yarn as our package manager. To get the dependencies installed, just do this in the root directory:
-
-```terminal
+```sh
 yarn install
 ```
 
-### Fire it up
+## Usage
 
-```terminal
+```sh
 yarn rw dev
 ```
 
@@ -35,10 +37,17 @@ Check out the components in Storybook
 yarn rw storybook
 ```
 
-### Ngrok it to the web
+## Run tests
+
+```sh
+yarn rw test api
+```
+
+## Ngrok it to the web
+
+Demo the app.
 
 ```bash
-# Example
 ngrok http --host-header=rewrite 10.61.141.234:8910
 ```
 
@@ -76,25 +85,18 @@ docker run -it --rm \
         pi0neerpat/dao-preview:latest
 ```
 
-Killing Docker
+## Author
 
-```bash
-# WARNING: may kill other containers on your machine
-sudo killall containerd-shim && docker-compose down
+👤 **Patrick Gallagher**
 
-sudo netstat -tulpn | grep :8910
-# or
-sudo lsof -i tcp:8910
-sudo kill 1888
-sudo kill -9 $(sudo lsof -t -i:8910) && sudo kill -9 $(sudo lsof -t -i:8911)
+- Website: https://patrickgallagher.dev
+  - Twitter: [@pi0neerpat](https://twitter.com/pi0neerpat)
+  - GitHub: [@pi0neerpat](https://github.com/pi0neerpat)
 
-docker kill CONTAINER
-# kill stubborn container
-sudo service docker restart
-# kill running containers
-docker kill $(docker ps -q)
-# !!! Remove all containers~!!!
-docker rm --force $(docker ps -a -q)
+## Show your support
 
-sudo /etc/init.d/docker restart
-```
+Give a ⭐️ if this project helped you!
+
+---
+
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
