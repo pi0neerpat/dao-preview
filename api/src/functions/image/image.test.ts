@@ -7,8 +7,8 @@ describe('image serverless function', () => {
   it('generates successfully', async () => {
     const httpEvent = mockHttpEvent({
       querytringParameters: {
-        width: 100,
-        height: 100,
+        // width: 100,
+        // height: 100,
         chainId: '0x64',
         address: '0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f',
       },
