@@ -3,7 +3,10 @@ import { chromium } from 'playwright-core'
 
 export const handler = async (event) => {
   try {
-    const { width, height } = (event.querytringParameters = {})
+    let width
+    let height
+    if (event.querytringParameters)
+      ({ width, height } = event.querytringParameters)
     const path = event.path
     const [chain, dao] = path.split('/')
 
@@ -18,8 +21,7 @@ export const handler = async (event) => {
     })
 
     // Generate the full URL out of the given path (GET parameter)
-    const url = 'https://duckduckgo.com'
-    await page.goto(url)
+    await page.goto(`${process.env.APP_DOMAIN}/preview/${chain}/${dao}`)
     const buffer = await page.screenshot()
     await browser.close()
     return {

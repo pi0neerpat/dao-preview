@@ -11,9 +11,9 @@ export default () => (
     </Head>
     <main className="not-found">
       <section className="not-found--container">
-        <div className="not-found--img">
+        {/*  <div className="not-found--img">
           <img src="/no-go.png" className="h-auto w-full block" alt="" />
-        </div>
+        </div>*/}
         <div className="not-found--content">
           <h1>Oops! Something is clearly wrong here...</h1>
           <p>The page you are looking for doesn&apos;t exist. (404)</p>

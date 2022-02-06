@@ -7,7 +7,7 @@ describe('image serverless function', () => {
   it('generates successfully', async () => {
     const httpEvent = mockHttpEvent({
       path: '0x64/abc123',
-      // querytringParameters: {data:true}
+      // querytringParameters: { width: 100, height: 100 },
     })
 
     const result = await handler(httpEvent)
