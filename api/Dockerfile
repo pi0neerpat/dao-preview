@@ -37,7 +37,6 @@ FROM node:14 as serve
 
 WORKDIR /app
 
-COPY tasks/environment/ tasks/environment/
 COPY serve-api.sh serve-api.sh
 
 COPY --from=build /app/packages /app/packages

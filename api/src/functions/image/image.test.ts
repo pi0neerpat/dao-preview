@@ -5,7 +5,8 @@ import { handler } from './image'
 describe('image serverless function', () => {
   it('generates a board image successfully', async () => {
     const httpEvent = mockHttpEvent({
-      body: {},
+      path: '0x64/abc123',
+      // querytringParameters: {data:true}
     })
 
     const result = await handler(httpEvent)
