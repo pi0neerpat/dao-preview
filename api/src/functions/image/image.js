@@ -1,25 +1,29 @@
 import Sentry from 'src/lib/sentry'
+import { chromium } from 'playwright-core'
 
 export const handler = async (event) => {
   try {
-    const { dataOnly } = (event.querytringParameters = {})
+    const { width, height } = (event.querytringParameters = {})
     const path = event.path
     const [chain, dao] = path.split('/')
-    console.log(chain)
-    console.log(dao)
 
-    const base64 = 'data:'
+    const browser = await chromium.launch()
+    // const context = await browser.newContext()
 
-    if (dataOnly) {
-      return {
-        statusCode: 200,
-        body: base64,
-      }
-    }
-    const buffer = Buffer.from(base64.split('base64,')[1], 'base64')
+    const page = await browser.newPage({
+      viewport: {
+        width: width || 1200,
+        height: height || 630,
+      },
+    })
+
+    // Generate the full URL out of the given path (GET parameter)
+    const url = 'https://duckduckgo.com'
+    await page.goto(url)
+    const buffer = await page.screenshot()
+    await browser.close()
     return {
-      headers: { 'Content-Type': 'image/jpeg' },
-      statusCode: 200,
+      statusCode: 500, // Always return 200
       body: buffer,
     }
   } catch (e) {

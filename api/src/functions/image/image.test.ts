@@ -1,20 +1,20 @@
 /* eslint-disable */
 import { mockHttpEvent } from '@redwoodjs/testing/api'
 import { handler } from './image'
+import fs from 'fs'
 
 describe('image serverless function', () => {
-  it('generates a board image successfully', async () => {
+  it('generates successfully', async () => {
     const httpEvent = mockHttpEvent({
       path: '0x64/abc123',
       // querytringParameters: {data:true}
     })
 
     const result = await handler(httpEvent)
+    console.log(result)
+
     const body = result.body
     console.log(body)
-
-    // expect(result.statusCode).toBe(200)
-    // expect(body.boardBase64).toContain('=')
-    // expect(body.quotient).toEqual(4)
+    fs.writeFile('deleteme.png', body, (e) => e && console.log(e))
   })
 })

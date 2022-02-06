@@ -51,6 +51,7 @@ COPY --from=build /app/yarn.lock /app/api/yarn.lock
 COPY --from=build /app/redwood.toml /app/redwood.toml
 
 RUN yarn --cwd "api" --frozen-lockfile install
+RUN npx playwright install
 
 # Expose RedwoodJS api port
 EXPOSE 8911
