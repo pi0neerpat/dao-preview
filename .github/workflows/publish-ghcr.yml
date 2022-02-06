@@ -9,7 +9,7 @@ on:
         default: 'dev'
 env:
   NODE_ENV: ${{ github.event.inputs.image_tag_prefix }}
-  REDWOOD_API_URL: 'http://0.0.0.0:8911'
+  # REDWOOD_API_URL: 'http://0.0.0.0:8911'
 
   # Container Registry
   CONTAINER_REGISTRY_HOSTNAME: ghcr.io
@@ -28,11 +28,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-20.04
-    timeout-minutes: 10
+    timeout-minutes: 20
     strategy:
       fail-fast: true
-      matrix:
-        platform: [api, web]
 
     steps:
       # Checkout source code
@@ -57,10 +55,9 @@ jobs:
         with:
           push: true
           context: .
-          file: ./${{ matrix.platform }}/Dockerfile
+          file: ./Dockerfile
           build-args: |
             NODE_ENV=${{ env.NODE_ENV }}
-            REDWOOD_API_URL=${{ env.REDWOOD_API_URL }}
           tags: |
-            ${{ env.CONTAINER_REGISTRY_HOSTNAME }}/${{ env.CONTAINER_REGISTRY_REPOSITORY }}/${{ env.CONTAINER_REGISTRY_IMAGE_PREFIX }}-${{ matrix.platform }}:latest
-            ${{ env.CONTAINER_REGISTRY_HOSTNAME }}/${{ env.CONTAINER_REGISTRY_REPOSITORY }}/${{ env.CONTAINER_REGISTRY_IMAGE_PREFIX }}-${{ matrix.platform }}:${{ env.NODE_ENV }}-${{ github.sha }}
+            ${{ env.CONTAINER_REGISTRY_HOSTNAME }}/${{ env.CONTAINER_REGISTRY_REPOSITORY }}/${{ env.CONTAINER_REGISTRY_IMAGE_PREFIX }}:latest
+            ${{ env.CONTAINER_REGISTRY_HOSTNAME }}/${{ env.CONTAINER_REGISTRY_REPOSITORY }}/${{ env.CONTAINER_REGISTRY_IMAGE_PREFIX }}:${{ env.NODE_ENV }}-${{ github.sha }}
