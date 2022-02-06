@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: ['src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'media', // or 'media' or 'class'
@@ -21,6 +23,7 @@ module.exports = {
       },
       greenDark: '#6C9D41',
       greenLight: '#9DBA5B',
+      gray: colors.zinc,
       grey: '#ABB6B9',
       greyDark: '#4F4F4F',
       orange: '#FFBB0D',
