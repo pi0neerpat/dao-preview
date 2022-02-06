@@ -35,14 +35,6 @@ const HomePage = () => {
       </Head>
       {/* TODO: remaining home page content */}
 
-      <div className="flex justify-center items-center">
-        <div className="bg-black p-2 rounded-xl flex justify-center items-center">
-          <div className="p-2 bg-white text-black rounded-br-none rounded-lg mr-2">
-            DAO
-          </div>
-          <div>Preview</div>
-        </div>
-      </div>
       <Form onSubmit={onSubmit} className="mb-4">
         <div className="flex items-center">
           <TextField

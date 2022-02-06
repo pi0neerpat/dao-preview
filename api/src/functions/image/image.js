@@ -1,5 +1,6 @@
 import Sentry from 'src/lib/sentry'
-import { chromium } from 'playwright-core'
+// import { chromium } from 'playwright-core'
+const playwright = require('playwright-aws-lambda')
 
 export const handler = async (event) => {
   try {
@@ -10,13 +11,14 @@ export const handler = async (event) => {
     const path = event.path
     const [chain, dao] = path.split('/')
 
-    const browser = await chromium.launch()
+    const browser = await playwright.launchChromium()
+    // const browser = await chromium.launch()
     // const context = await browser.newContext()
 
     const page = await browser.newPage({
       viewport: {
-        width: width || 1200,
-        height: height || 630,
+        width: width || 514,
+        height: height || 171,
       },
     })
 

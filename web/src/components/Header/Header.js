@@ -7,9 +7,14 @@ const Header = () => {
   return (
     <div className={'header'}>
       <div className={'header__iconSearch'}>
-        <Button to={routes.home()} className="mr-4">
-          <Icon name="dao_preview_full" height="35px" color="#fff" />
-        </Button>
+        <div className="flex justify-center items-center">
+          <div className="bg-black p-2 rounded-xl flex justify-center items-center">
+            <div className="p-2 bg-white text-black rounded-br-none rounded-lg mr-2">
+              DAO
+            </div>
+            <div>Preview</div>
+          </div>
+        </div>
       </div>
       <div className={'header__nav hidden lg:flex'}>
         <div className="flex-1 flex items-center">
