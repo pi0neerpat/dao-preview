@@ -41,3 +41,60 @@ yarn rw storybook
 # Example
 ngrok http --host-header=rewrite 10.61.141.234:8910
 ```
+
+## Docker
+
+Images are built via Github Action. To build the images locally:
+
+```bash
+docker build . -t pi0neerpat/dao-preview
+```
+
+Explore image contents:
+
+```bash
+docker run --rm -it --entrypoint=/bin/bash <image>
+```
+
+Run an image locally:
+
+Create a `GITHUB_PAT` in your Github "Developer Settings" with permissions `read:packages`
+
+```bash
+# Authenticate
+docker login https://ghcr.io -u USERNAME -p GITHUB_PAT
+
+# Pull the images (web and api)
+docker pull ghcr.io/pi0neerpat/dao-preview:latest
+
+# Start the image
+docker-compose up
+
+# Or run the image manually
+docker run -it --rm \
+       -p 8910:8910 \
+        pi0neerpat/dao-preview:latest
+```
+
+Killing Docker
+
+```bash
+# WARNING: may kill other containers on your machine
+sudo killall containerd-shim && docker-compose down
+
+sudo netstat -tulpn | grep :8910
+# or
+sudo lsof -i tcp:8910
+sudo kill 1888
+sudo kill -9 $(sudo lsof -t -i:8910) && sudo kill -9 $(sudo lsof -t -i:8911)
+
+docker kill CONTAINER
+# kill stubborn container
+sudo service docker restart
+# kill running containers
+docker kill $(docker ps -q)
+# !!! Remove all containers~!!!
+docker rm --force $(docker ps -a -q)
+
+sudo /etc/init.d/docker restart
+```
