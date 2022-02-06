@@ -9,7 +9,6 @@ COPY yarn.lock yarn.lock
 
 COPY redwood.toml redwood.toml
 COPY graphql.config.js graphql.config.js
-COPY babel.config.js babel.config.js
 
 COPY api/package.json api/package.json
 COPY web/package.json web/package.json
