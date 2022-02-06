@@ -8,7 +8,7 @@ export const handler = async (event) => {
     if (event.querytringParameters)
       ({ width, height } = event.querytringParameters)
     const path = event.path
-    const [chain, dao] = path.split('/')
+    const [_, __, chain, dao] = path.split('/')
 
     const browser = await chromium.launch()
     // const context = await browser.newContext()
@@ -19,25 +19,26 @@ export const handler = async (event) => {
         height: height || 171,
       },
     })
-
+    const url = `${process.env.APP_DOMAIN}/preview/${chain}/${dao}`
     // Generate the full URL out of the given path (GET parameter)
-    await page.goto(`${process.env.APP_DOMAIN}/preview/${chain}/${dao}`, {
+    await page.goto(url, {
       waitUntil: 'networkidle',
     })
     const buffer = await page.screenshot()
     await browser.close()
     return {
       statusCode: 500, // Always return 200
+      headers: { 'Content-Type': 'image/jpeg' },
       body: buffer,
     }
   } catch (e) {
     /* eslint-disable-next-line no-console */
     console.log(e)
-    Sentry.captureException(e)
+    // Sentry.captureException(e)
     return {
       statusCode: 500, // Always return 200
       body: {
-        message: 'Internal server error',
+        message: e,
       },
     }
   }
