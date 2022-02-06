@@ -40,7 +40,8 @@ COPY --from=build /app/web/dist /app/web/dist
 COPY --from=build /app/redwood.toml /app/redwood.toml
 
 RUN yarn --cwd "api" --production --frozen-lockfile install && \
-    yarn global add @redwoodjs/cli react react-dom
+    yarn global add @redwoodjs/cli react react-dom playwright && \
+    playwright install
 
 EXPOSE 8910
 

@@ -1,6 +1,5 @@
 import Sentry from 'src/lib/sentry'
-// import { chromium } from 'playwright-core'
-const playwright = require('playwright-aws-lambda')
+import { chromium } from 'playwright-core'
 
 export const handler = async (event) => {
   try {
@@ -11,8 +10,7 @@ export const handler = async (event) => {
     const path = event.path
     const [chain, dao] = path.split('/')
 
-    const browser = await playwright.launchChromium()
-    // const browser = await chromium.launch()
+    const browser = await chromium.launch()
     // const context = await browser.newContext()
 
     const page = await browser.newPage({
@@ -23,7 +21,9 @@ export const handler = async (event) => {
     })
 
     // Generate the full URL out of the given path (GET parameter)
-    await page.goto(`${process.env.APP_DOMAIN}/preview/${chain}/${dao}`)
+    await page.goto(`${process.env.APP_DOMAIN}/preview/${chain}/${dao}`, {
+      waitUntil: 'networkidle',
+    })
     const buffer = await page.screenshot()
     await browser.close()
     return {

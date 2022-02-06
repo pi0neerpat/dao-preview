@@ -18,14 +18,12 @@ const Header = () => {
       </div>
       <div className={'header__nav hidden lg:flex'}>
         <div className="flex-1 flex items-center">
-          <div>
-            <Button to={routes.faq()} size="large">
+          {/*<Button to={routes.faq()} size="large">
               <div className="flex items-center">
                 <img src="/icons/HelpIcon.png" alt="" className="mr-2" />
                 About
               </div>
-            </Button>
-          </div>
+            </Button>*/}
         </div>
       </div>
     </div>
