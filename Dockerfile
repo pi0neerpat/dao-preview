@@ -18,7 +18,7 @@ COPY web .
 
 RUN yarn install --frozen-lockfile
 RUN yarn rw build
-RUN yarn install-playwright
+# RUN yarn install-playwright
 
 EXPOSE 8910
 
