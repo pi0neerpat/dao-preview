@@ -1,6 +1,6 @@
 # ==
 # Base
-FROM  mcr.microsoft.com/playwright:focal as base
+FROM  node:14-alpine as base
 
 WORKDIR /app
 
@@ -26,7 +26,7 @@ RUN yarn rw build api web
 
 # ==
 # Serve
-FROM mcr.microsoft.com/playwright:focal as serve
+FROM node:14-alpine as serve
 
 WORKDIR /app
 
@@ -40,7 +40,9 @@ COPY --from=build /app/web/dist /app/web/dist
 COPY --from=build /app/redwood.toml /app/redwood.toml
 
 RUN yarn --cwd "api" --production --frozen-lockfile install && \
-    yarn global add @redwoodjs/cli react react-dom
+    yarn global add @redwoodjs/cli react react-dom && \
+    yarn playwright install-deps && \
+    yarn playwright install chromium
 
 EXPOSE 8910
 

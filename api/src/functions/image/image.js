@@ -19,7 +19,7 @@ export const handler = async (event) => {
         height: height,
       },
     })
-    const url = `${process.env.APP_DOMAIN}/preview/${chainId}/${address}`
+    const url = `https://${process.env.APP_DOMAIN}/preview/${chainId}/${address}`
 
     await page.goto(url, {
       waitUntil: 'networkidle',
