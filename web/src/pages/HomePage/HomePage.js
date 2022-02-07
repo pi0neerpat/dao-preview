@@ -83,7 +83,7 @@ const HomePage = () => {
                     DAO Preview
                   </h2>
                   <p className="mt-6 mx-auto max-w-2xl text-lg text-indigo-200">
-                    Generate once post anywhere. Always up to date.
+                    Generate once. Post anywhere. Always up to date.
                   </p>
                 </div>
 
@@ -98,7 +98,7 @@ const HomePage = () => {
                         name="chainId"
                         placeholder="Chain ID"
                         className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-                        // defaultValue={'0x64'}
+                        defaultValue={'0x64'}
                       />
                     </div>
                     <div className="col-span-5">
@@ -110,9 +110,9 @@ const HomePage = () => {
                         name="contractAddr"
                         placeholder="Contract Address"
                         className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-                        // defaultValue={
-                        //   '0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f'
-                        // }
+                        defaultValue={
+                          '0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f'
+                        }
                       />
                     </div>
                     <div className="col-span-2">
@@ -160,7 +160,7 @@ const HomePage = () => {
         <div>
           {values.chainId !== null && values.contractAddr !== null ? (
             <img
-              src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}`}
+              src={`${process.env.APP_DOMAIN}/api/image/${values.chainId}/${values.contractAddr}`}
               alt="dao preview"
             />
           ) : null}
@@ -175,7 +175,7 @@ const HomePage = () => {
                 value={ReactDOMServer.renderToString(
                   <a href={data?.dao?.daoHausUrl}>
                     <img
-                      src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}`}
+                      src={`${process.env.APP_DOMAIN}/api/image/${values.chainId}/${values.contractAddr}`}
                       alt="dao preview"
                     />
                   </a>
@@ -183,7 +183,7 @@ const HomePage = () => {
               >
                 <a href={data?.dao?.daoHausUrl}>
                   <img
-                    src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}\&address=${values.contractAddr}`}
+                    src={`${process.env.APP_DOMAIN}/api/image/${values.chainId}/${values.contractAddr}`}
                     alt="dao preview"
                   />
                 </a>
