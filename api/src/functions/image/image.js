@@ -8,10 +8,7 @@ export const handler = async (event) => {
     let address = '0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f'
     let chainId = '0x64'
     if (event.querytringParameters) {
-      ;({ width, height } = event.querytringParameters)
-    }
-    if (event.path) {
-      ;[_, __, chainId, path] = event.path.split('/')
+      ;({ width, height, chainId, address } = event.querytringParameters)
     }
 
     const browser = await chromium.launch()
