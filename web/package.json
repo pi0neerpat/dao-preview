@@ -21,6 +21,7 @@
     "@redwoodjs/router": "^0.40.0",
     "@redwoodjs/web": "^0.40.0",
     "@sentry/browser": "^6.17.3",
+    "clipboard": "^2.0.10",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
