@@ -160,7 +160,7 @@ const HomePage = () => {
         <div>
           {values.chainId !== null && values.contractAddr !== null ? (
             <img
-              src={`${process.env.APP_DOMAIN}/api/image/${values.chainId}/${values.contractAddr}`}
+              src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}`}
               alt="dao preview"
             />
           ) : null}
@@ -175,7 +175,7 @@ const HomePage = () => {
                 value={ReactDOMServer.renderToString(
                   <a href={data?.dao?.daoHausUrl}>
                     <img
-                      src={`${process.env.APP_DOMAIN}/api/image/${values.chainId}/${values.contractAddr}`}
+                      src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}`}
                       alt="dao preview"
                     />
                   </a>
@@ -183,7 +183,7 @@ const HomePage = () => {
               >
                 <a href={data?.dao?.daoHausUrl}>
                   <img
-                    src={`${process.env.APP_DOMAIN}/api/image/${values.chainId}/${values.contractAddr}`}
+                    src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}`}
                     alt="dao preview"
                   />
                 </a>
