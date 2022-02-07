@@ -1,5 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags, useQuery } from '@redwoodjs/web'
+import { trimAddress } from 'src/utils/helpers'
 
 const QUERY = gql`
   query Dao($contractAddr: String!, $chainId: String!) {
@@ -46,8 +47,10 @@ const DaoPreviewPage = ({ chainId, contractAddr }) => {
                 <div className="text-lg">
                   {formatter.format(data.dao.treasuryTotal)}
                 </div>
-                <div className="text-lg">{data.dao.memberCount}</div>
-                <div className="text-lg">{data.dao.contractAddress}</div>
+                <div className="text-lg">{data.dao.memberCount} Members</div>
+                <div className="text-lg">
+                  {trimAddress(data.dao.contractAddress)}
+                </div>
               </div>
             </div>
           </a>

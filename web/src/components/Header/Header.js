@@ -5,22 +5,25 @@ import Button from 'src/components/Button/Button'
 
 const Header = () => {
   return (
-    <div className={'header'}>
+    <div className={'header bg-gray-900'}>
       <div className={'header__iconSearch'}>
-        <Button to={routes.home()} className="mr-4">
-          <Icon name="dao_preview_full" height="35px" color="#fff" />
-        </Button>
+        <div className="flex justify-center items-center">
+          <div className="bg-black p-2 rounded-xl flex justify-center items-center">
+            <div className="p-2 bg-white text-black rounded-br-none rounded-lg mr-2">
+              DAO
+            </div>
+            <div>Preview</div>
+          </div>
+        </div>
       </div>
       <div className={'header__nav hidden lg:flex'}>
         <div className="flex-1 flex items-center">
-          <div>
-            <Button to={routes.faq()} size="large">
+          {/*<Button to={routes.faq()} size="large">
               <div className="flex items-center">
                 <img src="/icons/HelpIcon.png" alt="" className="mr-2" />
                 About
               </div>
-            </Button>
-          </div>
+            </Button>*/}
         </div>
       </div>
     </div>

@@ -7,8 +7,6 @@ const Routes = () => {
       <Route path="/preview/{chainId}/{contractAddr}" page={DaoPreviewPage} name="daoPreview" />
       <Set wrap={DefaultLayout}>
         <Route path="/" page={HomePage} name="home" />
-        <Route path="/preview" page={FaqPage} name="preview" />
-        <Route path="/about" page={FaqPage} name="faq" />
         <Route notfound page={NotFoundPage} />
       </Set>
     </Router>

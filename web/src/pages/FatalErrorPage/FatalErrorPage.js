@@ -27,7 +27,6 @@ export default () => (
               @media all and (min-width:800px) {
                 .header-container {
                   max-width: 80rem;
-                  margin: 14px auto;
                   height: 66px;
                   display: flex;
                   flex-direction: row;
@@ -35,7 +34,7 @@ export default () => (
                   align-items: center;
                   padding: 2.5ex 2ex;
                   background: #272522;
-                  border-radius: 12px;
+                  border-radius:0px;
                 }
                 .header-buttons-container {
                   margin-left: auto;
@@ -61,13 +60,11 @@ export default () => (
               @media all and (max-width:800px) {
                 .header-container {
                   max-width: 80rem;
-                  margin: 14px auto;
                   height: 66px;
                   display: flex;
                   flex-direction: row;
                   justify-content: space-between;
                   align-items: center;
-                  padding: 2.5ex 2ex;
                   background: #272522;
                   border-radius: 12px;
                 }
@@ -135,12 +132,6 @@ export default () => (
                     <img src="/home-icon.png" alt="Home" style="height: 35px"/>
                   </a>
                   <h3 class="header-mobile">Menu</h3>
-                  <div class="header-buttons-container">
-                    <a class="header-buttons" href="/about">
-                      <img src="/icons/HelpIcon.png" alt="question mark icon" style="height: 16px; padding: 0 8px"/>
-                      About
-                    </a>
-                  </div>
                 </div>
                 <div class="error-container">
                   <h1 class="error-title">Oops!</h1>
