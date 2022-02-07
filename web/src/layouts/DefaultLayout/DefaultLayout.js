@@ -5,12 +5,12 @@ import SiteFooter from './SiteFooter'
 const DefaultLayout = ({ children }) => {
   return (
     <div>
-      <div className="flex flex-col min-h-screen">
-        <header className="relative mb-8 mt-4">
+      <div className="flex flex-col mx-4 min-h-screen">
+        <header className="relative mb-8">
           <Header />
         </header>
         <div className="flex-grow">
-          <div className="max-w-7xl mx-4 sm:mx-auto px-0 sm:px-0 sm:max-w-screen">
+          <div className="max-w-7xl mx-auto sm:mx-auto px-0 sm:px-0 sm:max-w-screen">
             <div className="w-full">{children}</div>
           </div>
         </div>

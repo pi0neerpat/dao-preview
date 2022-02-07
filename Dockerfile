@@ -26,7 +26,7 @@ RUN yarn rw build api web
 
 # ==
 # Serve
-FROM node:14-alpine as serve
+FROM mcr.microsoft.com/playwright:focal as serve
 
 WORKDIR /app
 
@@ -40,8 +40,7 @@ COPY --from=build /app/web/dist /app/web/dist
 COPY --from=build /app/redwood.toml /app/redwood.toml
 
 RUN yarn --cwd "api" --production --frozen-lockfile install && \
-    yarn global add @redwoodjs/cli react react-dom playwright && \
-    playwright install
+    yarn global add @redwoodjs/cli react react-dom
 
 EXPOSE 8910
 

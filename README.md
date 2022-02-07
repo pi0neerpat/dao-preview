@@ -82,6 +82,7 @@ docker-compose up
 # Or run the image manually
 docker run -it --rm \
        -p 8910:8910 \
+       -e .env
         pi0neerpat/dao-preview:latest
 ```
 

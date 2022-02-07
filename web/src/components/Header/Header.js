@@ -6,14 +6,12 @@ import Button from 'src/components/Button/Button'
 const Header = () => {
   return (
     <div className={'header bg-gray-900'}>
-      <div className={'header__iconSearch'}>
-        <div className="flex justify-center items-center">
-          <div className="bg-black p-2 rounded-xl flex justify-center items-center">
-            <div className="p-2 bg-white text-black rounded-br-none rounded-lg mr-2">
-              DAO
-            </div>
-            <div>Preview</div>
+      <div className="flex justify-center items-center">
+        <div className="bg-black p-2 rounded-xl flex justify-center items-center">
+          <div className="p-2 bg-white text-black rounded-br-none rounded-lg mr-2">
+            DAO
           </div>
+          <div>Preview</div>
         </div>
       </div>
       <div className={'header__nav hidden lg:flex'}>

@@ -50,7 +50,7 @@ const HomePage = () => {
         <title>Home</title>
       </Head>
 
-      <div className="py-16 sm:py-24 ">
+      <div className="py-8 sm:py-8 ">
         <div className="relative sm:py-8">
           <div className="mx-auto max-w-md sm:max-w-3xl  lg:max-w-7xl">
             <div className="relative rounded-2xl px-6 py-10 bg-indigo-600 overflow-hidden shadow-xl sm:px-12 sm:py-20 bg-gray-900">
@@ -199,6 +199,15 @@ const HomePage = () => {
             </div>
           )}
         </div>
+      </div>
+      <div className="flex-column items-center mt-12 mx-auto align-center">
+        <img src="/ethglobal.svg" />
+        <a
+          className=""
+          href="https://showcase.ethglobal.com/roadtoweb3/dao-preview"
+        >
+          Road to Web3 2022 Submission
+        </a>
       </div>
     </>
   )
