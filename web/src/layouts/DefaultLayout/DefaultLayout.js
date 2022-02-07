@@ -11,7 +11,7 @@ const DefaultLayout = ({ children }) => {
         </header>
         <div className="flex-grow">
           <div className="max-w-7xl mx-4 sm:mx-auto px-0 sm:px-0 sm:max-w-screen">
-            <div className="w-full ml-8">{children}</div>
+            <div className="w-full">{children}</div>
           </div>
         </div>
         <SiteFooter className="self-end" />

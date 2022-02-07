@@ -5,7 +5,7 @@ import Button from 'src/components/Button/Button'
 
 const Header = () => {
   return (
-    <div className={'header'}>
+    <div className={'header bg-gray-900'}>
       <div className={'header__iconSearch'}>
         <div className="flex justify-center items-center">
           <div className="bg-black p-2 rounded-xl flex justify-center items-center">
