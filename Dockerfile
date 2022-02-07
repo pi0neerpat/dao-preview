@@ -1,6 +1,6 @@
 # ==
 # Base
-FROM node:14-alpine as base
+FROM  mcr.microsoft.com/playwright:focal as base
 
 WORKDIR /app
 
