@@ -1,5 +1,5 @@
 import { logger } from 'src/lib/logger'
-import { createCanvas, loadImage } from 'canvas'
+import { createCanvas, loadImage } from '@napi-rs/canvas'
 import { dao } from 'src/services/daos/doa'
 
 const roundRect = (ctx, x, y, width, height, radius, fill, stroke) => {
