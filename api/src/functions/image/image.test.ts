@@ -6,7 +6,7 @@ import fs from 'fs'
 describe('image serverless function', () => {
   it('generates successfully', async () => {
     const httpEvent = mockHttpEvent({
-      querytringParameters: {
+      queryStringParameters: {
         // width: 100,
         // height: 100,
         chainId: '0x64',
