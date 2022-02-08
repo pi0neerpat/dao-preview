@@ -7,6 +7,9 @@ import { Form, TextField, Submit } from '@redwoodjs/forms'
 import { useLazyQuery } from '@apollo/client'
 import ClipboardJS from 'clipboard'
 
+import FeaturedDaos from 'src/components/FeaturedDaos'
+import NetworkDropdown from 'src/components/NetworkDropdown'
+
 const QUERY = gql`
   query Dao($contractAddr: String!, $chainId: String!) {
     dao(contractAddr: $contractAddr, chainId: $chainId) {
@@ -94,15 +97,9 @@ const HomePage = () => {
                   <div className="grid grid-cols-12 gap-6">
                     <div className="col-span-5">
                       <label htmlFor="chainId" className="sr-only">
-                        Chain ID
+                        Network
                       </label>
-                      <TextField
-                        id="chainId"
-                        name="chainId"
-                        placeholder="Chain ID"
-                        className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-                        defaultValue={'0x64'}
-                      />
+                      <NetworkDropdown name="chainId" defaultValue={'0x64'} />
                     </div>
                     <div className="col-span-5">
                       <label htmlFor="contractAddr" className="sr-only">
@@ -194,6 +191,7 @@ const HomePage = () => {
           )}
         </div>
       </div>
+      <FeaturedDaos />
       <div className="flex-column items-center mt-12 mx-auto align-center">
         <img src="/ethglobal.svg" />
         <a
