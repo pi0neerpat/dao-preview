@@ -98,7 +98,7 @@ const HomePage = () => {
                         name="chainId"
                         placeholder="Chain ID"
                         className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-                        defaultValue={'0x64'}
+                        // defaultValue={'0x64'}
                       />
                     </div>
                     <div className="col-span-5">
@@ -110,9 +110,9 @@ const HomePage = () => {
                         name="contractAddr"
                         placeholder="Contract Address"
                         className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-                        defaultValue={
-                          '0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f'
-                        }
+                        // defaultValue={
+                        //   '0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f'
+                        // }
                       />
                     </div>
                     <div className="col-span-2">
@@ -120,7 +120,7 @@ const HomePage = () => {
                         {!loading ? (
                           'Preview'
                         ) : (
-                          <div className="flex items-baseline justify-center">
+                          <div className="flex items-center justify-center">
                             <div className="h-5 w-5">
                               <svg
                                 className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
@@ -158,10 +158,12 @@ const HomePage = () => {
       {data && !loading && <div className="mb-4">Preview</div>}
       <div className="grid grid-cols-2 gap-2">
         <div>
-          {values.chainId !== null && values.contractAddr !== null ? (
+          {values.chainId !== null &&
+          values.contractAddr !== null &&
+          !loading ? (
             <img
-              src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}`}
-              alt="dao preview"
+              src={`${process.env.APP_DOMAIN}/api/canvas?chainId=${values.chainId}&address=${values.contractAddr}`}
+              alt="canvas"
             />
           ) : null}
         </div>
@@ -172,22 +174,8 @@ const HomePage = () => {
                 rows="5"
                 className="bg-gray-900 text-white text-sm w-full p-4 rounded pointer-events-none"
                 id="snippet"
-                value={ReactDOMServer.renderToString(
-                  <a href={data?.dao?.daoHausUrl}>
-                    <img
-                      src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}`}
-                      alt="dao preview"
-                    />
-                  </a>
-                )}
-              >
-                <a href={data?.dao?.daoHausUrl}>
-                  <img
-                    src={`${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}`}
-                    alt="dao preview"
-                  />
-                </a>
-              </textarea>
+                value={`<a href="${data?.dao?.daoHausUrl}"><img src="${process.env.APP_DOMAIN}/api/canvas?chainId=${values.chainId}&address=${values.contractAddr}" alt="${data?.dao?.name} DAO preview" /></a>`}
+              ></textarea>
               <button
                 className="block w-full rounded-md border border-transparent px-5 py-3 bg-indigo-500 text-base font-medium text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10"
                 id="copyButton"

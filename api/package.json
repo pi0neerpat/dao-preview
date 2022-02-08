@@ -9,6 +9,7 @@
     "@redwoodjs/graphql-server": "^0.40.0",
     "@sentry/node": "^6.17.3",
     "@sentry/tracing": "^6.17.3",
+    "canvas": "^2.9.0",
     "core-js": "^3.19.1",
     "graphql-request": "^4.0.0",
     "playwright-core": "^1.18.1",
