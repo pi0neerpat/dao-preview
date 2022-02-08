@@ -13,6 +13,33 @@
 
 > An easy way for everyone to &#34;get the scoop&#34; on your DAO
 
+### Examples
+
+The snippet can be pasted directly into Markdown files like this:
+
+#### As a Button 
+
+
+<a href="https://app.daohaus.club/dao/0x64/0xb152b115c94275b54a3f0b08c1aa1d21f32a659a">
+  <img src="https://daopreview.com/api/canvas?chainId=0x64&address=0xb152b115c94275b54a3f0b08c1aa1d21f32a659a" 
+    alt="MetaCartel xDai" />
+</a>
+
+```html
+<a href="https://app.daohaus.club/dao/0x64/0xb152b115c94275b54a3f0b08c1aa1d21f32a659a">
+  <img src="https://daopreview.com/api/canvas?chainId=0x64&address=0xb152b115c94275b54a3f0b08c1aa1d21f32a659a" alt="MetaCartel xDai" />
+</a>
+```
+
+#### Image only
+
+![](https://daopreview.com/api/canvas?chainId=0x64&address=0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f)
+
+
+```html
+![](https://daopreview.com/api/canvas?chainId=0x64&address=0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f)
+```
+
 ### 🏠 [Homepage](https://daopreview.com)
 
 ## Install
