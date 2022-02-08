@@ -45,7 +45,7 @@ const HomePage = () => {
   }
 
   const snippet = `<a href="${data?.dao?.daoHausUrl}">
-  <img src="${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}" alt="${data.dao.name}" />
+  <img src="${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}" alt="${data?.dao?.name}" />
 </a>`
 
   return (
@@ -176,6 +176,7 @@ const HomePage = () => {
                 className="bg-gray-900 text-white text-sm w-full p-4 rounded pointer-events-none"
                 id="snippet"
                 value={snippet}
+                readOnly
               >
                 {snippet}
               </textarea>
