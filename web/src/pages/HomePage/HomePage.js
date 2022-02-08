@@ -48,7 +48,7 @@ const HomePage = () => {
   }
 
   const snippet = `<a href="${data?.dao?.daoHausUrl}">
-  <img src="${process.env.APP_DOMAIN}/api/image?chainId=${values.chainId}&address=${values.contractAddr}" alt="${data?.dao?.name}" />
+  <img src="${process.env.APP_DOMAIN}/api/canvas?chainId=${values.chainId}&address=${values.contractAddr}" alt="${data?.dao?.name}" />
 </a>`
 
   return (
