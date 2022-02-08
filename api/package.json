@@ -5,6 +5,7 @@
   "dependencies": {
     "@envelop/rate-limiter": "^1.0.0",
     "@envelop/sentry": "^1.1.0",
+    "@napi-rs/canvas": "^0.1.19",
     "@redwoodjs/api": "^0.40.0",
     "@redwoodjs/graphql-server": "^0.40.0",
     "@sentry/node": "^6.17.3",
