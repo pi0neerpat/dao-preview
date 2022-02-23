@@ -1,6 +1,8 @@
+import Preview from 'src/components/Preview/Preview'
+
 export const QUERY = gql`
-  query Preview($contractAddr: String!, $chainId: String!, $type: String!) {
-    dao(contractAddr: $contractAddr, chainId: $chainId, type: $type) {
+  query Preview($contractAddress: String!, $chainId: String!, $type: String!, yeeterId: Int) {
+    preview($contractAddress: $contractAddress, chainId: $chainId, type: $type, yeeterId: $yeeterId) {
       name
       profileImage
       daoHausUrl
@@ -12,14 +14,14 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <Preview isLoading />
 
-export const Empty = () => <div>Empty</div>
+export const Empty = () => <div>Not found</div>
 
 export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
 export const Success = ({ preview }) => {
-  return <div>{JSON.stringify(preview)}</div>
+  return <Preview preview={preview} />
 }

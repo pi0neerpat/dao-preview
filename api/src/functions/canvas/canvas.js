@@ -1,7 +1,7 @@
 import { logger } from 'src/lib/logger'
 import { createCanvas, loadImage } from 'canvas'
 // import { createCanvas, loadImage } from '@napi-rs/canvas'
-import { dao } from 'src/services/daos/doa'
+import { getDao } from 'src/lib/dao'
 
 const roundRect = (ctx, x, y, width, height, radius, fill, stroke) => {
   if (typeof stroke === 'undefined') {
@@ -61,7 +61,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 })
 
 export const handler = async (event) => {
-  let contractAddr = '0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f'
+  let contractAddress = '0xfe1084bc16427e5eb7f13fc19bcd4e641f7d571f'
   let chainId = '0x64'
 
   if (event.queryStringParameters) {
@@ -69,7 +69,7 @@ export const handler = async (event) => {
       // width,
       // height,
       chainId,
-      address: contractAddr,
+      address: contractAddress,
     } = event.queryStringParameters)
   }
 
@@ -77,11 +77,11 @@ export const handler = async (event) => {
     name,
     profileImage,
     // daoHausUrl,
-    // contractAddress: contractAddr,
+    // contractAddresses: contractAddress,
     // chainId,
     treasuryTotal,
     memberCount,
-  } = await dao({ contractAddr, chainId })
+  } = await getDao({ contractAddress, chainId })
 
   let width = 514
   let height = 170
@@ -98,7 +98,7 @@ export const handler = async (event) => {
   ctx.fillStyle = '#fff'
   ctx.fillText(formatter.format(treasuryTotal), 170, 70 + 10)
   ctx.fillText(`${memberCount} members`, 170, 100 + 10)
-  ctx.fillText(trimAddress(contractAddr), 170, 130 + 10)
+  ctx.fillText(trimAddress(contractAddress), 170, 130 + 10)
 
   roundRect(ctx, 0, 0, 150, height, 0, false)
   ctx.clip()

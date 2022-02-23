@@ -1,4 +1,5 @@
 import { getDao } from 'src/lib/dao'
+import { getYeeter } from 'src/lib/yeeter'
 
 export const preview = async ({ contractAddress, chainId, type, yeeterId }) => {
   if (type === 'YEETER') {

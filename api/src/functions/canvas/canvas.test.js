@@ -6,7 +6,8 @@ describe('canvas function', () => {
   it('Should respond with 200', async () => {
     const httpEvent = mockHttpEvent({
       queryStringParameters: {
-        id: '42', // Add parameters here
+        chainId: '0x64',
+        contractAddress: '0xb152b115c94275b54a3f0b08c1aa1d21f32a659a',
       },
     })
 

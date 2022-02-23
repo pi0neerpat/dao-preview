@@ -15,7 +15,7 @@ export const schema = gql`
       contractAddress: String!
       chainId: String!
       type: String!
-      yeeterId: String
+      yeeterId: Int
     ): PreviewData! @skipAuth
   }
 `

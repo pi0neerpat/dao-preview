@@ -6,10 +6,10 @@ const formatter = new Intl.NumberFormat('en-US', {
 })
 
 const Preview = ({ isLoading, preview }) => {
-  const buttonSnippet = `<a href="${data?.dao?.daoHausUrl}">
-  <img src="${process.env.APP_DOMAIN}/api/canvas?chainId=${values.chainId}&address=${values.contractAddr}" alt="${data?.dao?.name}" />
+  const buttonSnippet = `<a href="${preview?.daoHausUrl}">
+  <img src="${process.env.APP_DOMAIN}/api/canvas?chainId=${preview.chainId}&address=${preview.contractAddress}" alt="${preview.name}" />
 </a>`
-  const imageSnippet = `${process.env.APP_DOMAIN}/api/canvas?chainId=${values.chainId}&address=${values.contractAddr}`
+  const imageSnippet = `${process.env.APP_DOMAIN}/api/canvas?chainId=${values.chainId}&address=${values.contractAddress}`
 
   React.useEffect(() => {
     const clipboard = new ClipboardJS('#copyButton')
@@ -28,10 +28,10 @@ const Preview = ({ isLoading, preview }) => {
       <div className="grid grid-cols-2 gap-2">
         <div>
           {values.chainId !== null &&
-          values.contractAddr !== null &&
+          values.contractAddress !== null &&
           !loading ? (
             <img
-              src={`${process.env.APP_DOMAIN}/api/canvas?chainId=${values.chainId}&address=${values.contractAddr}`}
+              src={`${process.env.APP_DOMAIN}/api/canvas?chainId=${values.chainId}&address=${values.contractAddress}`}
               alt="canvas"
             />
           ) : null}
