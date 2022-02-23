@@ -1,7 +1,7 @@
 import { request } from 'graphql-request'
 import fetch from 'node-fetch'
-import { supportedChains } from './chains'
-import { STATS, TREASURY } from './doa-queries'
+import { supportedChains } from 'src/lib/chains'
+import { STATS, TREASURY } from './graphql'
 
 const calcTotalUSD = (decimals, tokenBalance, usdVal) => {
   return (+tokenBalance / 10 ** decimals) * +usdVal
@@ -64,7 +64,7 @@ const daoStats = async ({ contractAddr, chainId }) => {
   return { memberCount: moloch.memberCount }
 }
 
-export const dao = async ({ contractAddr, chainId }) => {
+export const getDao = async ({ contractAddress, chainId }) => {
   const { name, profileImage, daoHausUrl } = await doaProfile({
     contractAddr,
     chainId,

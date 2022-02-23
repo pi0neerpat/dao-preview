@@ -1,5 +1,5 @@
 export const schema = gql`
-  type Dao {
+  type PreviewData {
     id: String!
     name: String
     profileImage: String
@@ -11,6 +11,11 @@ export const schema = gql`
   }
 
   type Query {
-    dao(contractAddr: String!, chainId: String!): Dao! @skipAuth
+    preview(
+      contractAddress: String!
+      chainId: String!
+      type: String!
+      yeeterId: String
+    ): PreviewData! @skipAuth
   }
 `
